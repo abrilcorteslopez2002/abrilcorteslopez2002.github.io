@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario</title>
+<link href="../CSS/Style.css" rel="stylesheet" type="text/css">
+<!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
+<script>var __adobewebfontsappname__="dreamweaver"</script>
+<script src="http://use.edgefonts.net/andika:n4:default.js" type="text/javascript"></script>
+</head>
+<body>
+   <header><h1>Cuestionario</h1>
+</header>
+<nav>
+        <ul>
+            <li><a href="../index.html.html">Inicio</a></li>
+            <li><a href="Galeria.html">Galeria</a></li>
+            <li><a href="Practicas.html">Practicas</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+
+ <main>
+        <section>
+            <form>
+                <h2>1. ¿Cuál es tu Grupo Kpop favorito?</h2>
+                <label>
+                    <input type="radio" name="color" value="azul">
+                     BTS</label>
+                <label>
+                    <input type="radio" name="color" value="rojo">
+                     TOMORROW BE TOGHETER</label>
+                <label>
+                    <input type="radio" name="color" value="verde">
+                     STRAY KIDS</label>
+                <label>
+                    <input type="radio" name="color" value="otro"> Otro:
+                    <input type="text" name="otro_GRUPO">
+                </label>
+            </form>
+            
+            <!-- Las siguientes preguntas van aquí -->
+            
+            <form>
+                <h2>2. ¿Qué genero musical prefieres?</h2>
+                <input type="checkbox" id="pop" name="music" value="Pop">
+                <label for="pop">Pop/Kpop</label>
+                <br>
+                <input type="checkbox" id="rock" name="music" value="Rock">
+                <label for="rock">Rock</label><br>
+                <input type="checkbox" id="jazz" name="music" value="Jazz">
+                <label for="jazz">Hip hop</label>
+                <br>
+                <input type="checkbox" id="otro" name="music" value="Otro">
+                <label for="otro">Otro:</label>
+                <input type="text" id="otro-text" name="music-otro"><br>
+            </form>            
+            
+            <!-- Pregunta 3 -->
+            
+            <form id="questionnaireForm">
+                <h2>3. ¿Cuál es tu género cinematográfico favorito?</h2>
+                <input type="button" value="Terror" onclick="selectGenre('Acción')">
+                <input type="button" value="Romance" onclick="selectGenre('Comedia')">
+                <input type="button" value="Suspenso" onclick="selectGenre('Drama')">
+                <input type="button" value="Otro" onclick="selectOtherGenre('Ótro')">
+                <input type="text" id="otherGenreInput" style="display: none" placeholder="Especificar otro género">
+            </form>
+            
+            <!-- Pregunta 4 -->
+            
+            <form action="procesar_respuestas.php" method="post">
+                <h2>4. ¿Qué postre te gusta más?</h2>
+                <input type="radio" name="postre" value="flan">
+                Flan&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<input type="radio" name="postre" value="pastel">
+ Pastel&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<input type="radio" name="postre" value="helado">
+ Helado&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<input type="radio" name="postre" value="otro"> Otro: <input type="text" name="otro_postre">
+                
+                <!-- Pregunta 5 -->
+                
+                <h2>5. ¿Qué tipo de comida prefieres?</h2>
+                <input type="checkbox" name="comida[]" value="italiana"> Italiana
+                <input type="checkbox" name="comida[]" value="mexicana"> Mexicana
+                <input type="checkbox" name="comida[]" value="asiatica"> Asiática
+                <input type="checkbox" name="comida[]" value="otro"> Otro: <input type="text" name="otra_comida">
+                
+                <!-- Pregunta 6 -->
+                
+                <h2>6. ¿Cuál es tu animal tierno favorito?</h2>
+                <select name="animal">
+                  <option value="hurón">Hurón patinegro</option>
+                    <option value="Cabguro">Canguro arboricola</option>
+                    <option value="chinchilla">Chinchilla</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <input type="text" name="otro_animal">
+                
+                <!-- Pregunta 7 -->
+                
+                <h2>7. ¿Cuál es tu pasatiempo favorito?</h2>
+                <input type="text" name="pasatiempo">
+    
+       <!-- Pregunta 8 -->
+                
+                <h2>8. ¿Cuál pais preferirias conocer?</h2>
+                <select name="pais">
+                    <option value="francia">Francia</option>
+                    <option value="china">China</option>
+                    <option value="canada">Canada</option>
+                    <option value="londres">Londres</option>
+                </select>
+                
+                <!-- Pregunta 9 -->
+                
+                <h2>9. ¿Prefieres la Café o Té?</h2>
+              <input type="radio" name="preferencia" value="Cafe"> Café
+              <input type="radio" name="preferencia" value="Té"> Té
+			  <input type="radio" name="preferencia" value="Ambos"> Ambos
+                
+                <!-- Pregunta 10 -->
+                
+                <h2>10. ¿Tienes alguna fobia?</h2>
+                <select name="superpoder">
+                  <option value="aracnofobia">aracnofobia</option>
+                    <option value="tripofobia">tripofobia</option>
+                    <option value="talasofobia">talasofobia</option>
+                    <option value="otro">Otro</option>
+                </select>
+              <input type="text" name="otro_fobia">
+                
+                <input type="submit" value="Enviar respuestas">
+            </form>
+   </section>
+</main>
+    
+<script>
+        function selectGenre(genre) {
+            console.log("Seleccionaste el género: " + genre);
+        }
+
+        function selectOtherGenre() {
+            var otherGenreInput = document.getElementById("otherGenreInput");
+            otherGenreInput.style.display = "inline";
+        }
+    </script>
+</body>
+</html>
